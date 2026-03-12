@@ -1,0 +1,292 @@
+:root {
+    --primary: #4ade80; /* Light Green */
+    --secondary: #22c55e; /* slightly darker green for depth */
+    --dark: #1e1f24;
+    --light-green: #dcfce7;
+    --light-purple: #f0fdf4; /* repurposed as a very light green */
+    --accent: #86efac;
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --gradient-reverse: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #4b5563;
+    overflow-x: clip;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Typography & Utilities */
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+.bg-dark-custom {
+    background-color: var(--dark);
+}
+.text-accent {
+    color: var(--accent);
+}
+.bg-light-green {
+    background-color: var(--light-green);
+}
+.bg-light-purple {
+    background-color: var(--light-purple);
+}
+.text-green {
+    color: var(--primary);
+}
+.text-purple {
+    color: var(--secondary);
+}
+
+/* Buttons */
+.gradient-btn {
+    background: var(--gradient);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(75, 175, 80, 0.3);
+}
+.gradient-btn:hover {
+    background: var(--gradient-reverse);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(140, 113, 196, 0.4);
+    color: white;
+}
+.btn-contact {
+    background: var(--gradient);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.btn-contact:hover {
+    transform: scale(1.05);
+    color: white !important;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+.brand-logo {
+    max-height: 50px;
+    width: auto;
+}
+.nav-pills .nav-link {
+    color: #4b5563;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+}
+.nav-pills .nav-link:hover {
+    color: var(--primary);
+}
+.nav-pills .nav-link.active {
+    background-color: transparent;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    font-weight: 700;
+}
+
+/* Home Section */
+.home-section {
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+    background-color: #fcfcfd;
+}
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+}
+.hero-image {
+    position: relative;
+    z-index: 2;
+    border: 8px solid white;
+}
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(60px);
+    opacity: 0.6;
+}
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    top: -50px;
+    right: -50px;
+    animation: float 6s ease-in-out infinite;
+}
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--secondary);
+    bottom: -50px;
+    left: -50px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+.hero-bg-blob {
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(75, 175, 80, 0.05) 0%, rgba(140, 113, 196, 0.05) 100%);
+    border-radius: 50%;
+    z-index: 0;
+    transform: skewY(-10deg);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* About Section */
+.py-6 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about-img {
+    border: 10px solid white;
+}
+.experience-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    border: 5px solid white;
+    z-index: 3;
+    animation: pulse 3s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+.gallery-box {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+.gallery-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+    border-color: rgba(75, 175, 80, 0.2);
+}
+.gallery-box .icon-wrapper {
+    font-size: 2rem;
+    color: var(--secondary);
+    transition: all 0.3s ease;
+}
+.gallery-box:hover .icon-wrapper {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Services */
+.service-section {
+    background-color: white;
+}
+.service-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.service-icon {
+    width: 80px;
+    height: 80px;
+    transition: all 0.4s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+.active-card {
+    background: var(--gradient);
+    color: white !important;
+}
+.active-card h4, .active-card p {
+    color: white !important;
+}
+.active-card .service-icon {
+    background: rgba(255,255,255,0.2) !important;
+    color: white !important;
+}
+
+/* Contact Us */
+.contact-info-box {
+    border-radius: 1rem 0 0 1rem;
+}
+@media (max-width: 991px) {
+    .contact-info-box {
+        border-radius: 1rem 1rem 0 0;
+    }
+}
+.contact-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
+    background-size: 30px 30px;
+    z-index: 0;
+    opacity: 0.5;
+}
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-form .form-control {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem 0.75rem;
+    background-color: #f8f9fa;
+}
+.contact-form .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(75, 175, 80, 0.25);
+    background-color: white;
+}
+
+/* Footer */
+.footer-links a {
+    transition: all 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--primary) !important;
+    padding-left: 5px;
+}
+.social-links a {
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    background: var(--gradient) !important;
+    transform: translateY(-3px);
+}
